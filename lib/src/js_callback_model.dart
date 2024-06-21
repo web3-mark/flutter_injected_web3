@@ -41,15 +41,17 @@ class JsDataModel {
 
 class JsTransactionObject {
   String? gas;
+  String? gasPrice;
   String? value;
   String? from;
   String? to;
   String? data;
 
-  JsTransactionObject({this.gas, this.value, this.from, this.to, this.data});
+  JsTransactionObject({this.gas, this.value, this.from, this.to, this.data, this.gasPrice});
 
   JsTransactionObject.fromJson(Map<String, dynamic> json) {
     gas = json['gas'];
+    gasPrice = json['gasPrice'];
     value = json['value'];
     from = json['from'];
     to = json['to'];
@@ -59,6 +61,7 @@ class JsTransactionObject {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['gas'] = gas;
+    data['gasPrice'] = gasPrice;
     data['value'] = value;
     data['from'] = from;
     data['to'] = to;
