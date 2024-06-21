@@ -40,32 +40,35 @@ class JsDataModel {
 }
 
 class JsTransactionObject {
-  String? gas;
+  String? gasLimit;
   String? gasPrice;
   String? value;
   String? from;
   String? to;
   String? data;
+  String? nonce;
 
-  JsTransactionObject({this.gas, this.value, this.from, this.to, this.data, this.gasPrice});
+  JsTransactionObject({this.gasLimit, this.value, this.from, this.to, this.data, this.gasPrice, this.nonce});
 
   JsTransactionObject.fromJson(Map<String, dynamic> json) {
-    gas = json['gas'];
+    gasLimit = json['gasLimit'] ?? json['gas'] ?? json['gas'];
     gasPrice = json['gasPrice'];
     value = json['value'];
     from = json['from'];
     to = json['to'];
     data = json['data'];
+    nonce = json['nonce'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['gas'] = gas;
+    data['gasLimit'] = gasLimit;
     data['gasPrice'] = gasPrice;
     data['value'] = value;
     data['from'] = from;
     data['to'] = to;
     data['data'] = data;
+    data['nonce'] = nonce;
     return data;
   }
 }
