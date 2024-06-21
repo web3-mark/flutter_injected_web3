@@ -51,7 +51,7 @@ class JsTransactionObject {
   JsTransactionObject({this.gasLimit, this.value, this.from, this.to, this.data, this.gasPrice, this.nonce});
 
   JsTransactionObject.fromJson(Map<String, dynamic> json) {
-    gasLimit = json['gasLimit'] ?? json['gas'] ?? json['gas'];
+    gasLimit = json['gasLimit'] ?? json['gas'];
     gasPrice = json['gasPrice'];
     value = json['value'];
     from = json['from'];
